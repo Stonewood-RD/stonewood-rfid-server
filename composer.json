@@ -1,0 +1,89 @@
+{   
+    "name": "stonewood/stonewood-rfid-server",
+    "description": "Servidor interno para el manejo de RFID.",
+    "type": "project",
+    "license": "Private",
+    "authors": [
+        {
+            "name": "Gustavo Tavares",
+            "email": "mucholove@fastmail.com"         
+        }
+    ],
+    "platform": {
+        "php": "8.2"
+    },
+    "repoInfo": "https://getcomposer.org/doc/05-repositories.md",
+    "repositories": {
+        "local-libs": {
+            "type": "path",
+            "url": "../*"
+        },
+        "mucholove/deployer": {
+            "type": "vcs",
+            "url": "https://github.com/mucholove/deployer"
+        },
+        "gtk/gtk-helpers": {
+            "type": "vcs",
+            "url": "https://github.com/mucholove/gtk-helpers"
+        },
+        "gtk/rntt": {
+            "type": "vcs",
+            "url": "https://github.com/stonewood-rd/rntt"
+        }
+    },
+    "repositoriesNOT": {
+        "mucholove/deployer": {
+            "type": "vcs",
+            "url": "https://github.com/mucholove/deployer"
+        },
+        "gtk/gtk-data-access": {
+            "type": "vcs",
+            "url": "https://github.com/mucholove/gtk-data-access"
+        },
+        "gtk/gtk-helpers": {
+            "type": "vcs",
+            "url": "https://github.com/mucholove/gtk-helpers"
+        },
+        "stonewood/stonewood-lib": {
+            "type": "vcs",
+            "url": "https://github.com/stonewood-rd/stonewood-lib"
+        },
+        "gtk/rntt": {
+            "type": "vcs",
+            "url": "https://github.com/stonewood-rd/rntt"
+        },
+        "stonewood/conexion_rfid": {
+            "type": "vcs",
+            "url": "https://github.com/stonewood-rd/rfid-vehiculo-en-punto"
+        }
+    },
+    "FAKE-minimum-stability": "stable",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^8.1",
+        "gtk/gtk-data-access":  "dev-main",
+        "gtk/gtk-helpers": "dev-main",
+        "stonewood/conexion_rfid":"dev-main",
+        "stonewood/stonewood-lib": "dev-main"
+    },
+    "requireOther": {
+        "endroid/qr-code": "^4.8",
+        "ddeboer/imap": "^1.17",
+        "markrogoyski/math-php": "2.*",
+        "phpmailer/phpmailer": "6.9.1",
+        "thiagoalessio/tesseract_ocr": "^2.12",
+        "phpseclib/phpseclib": "^3.0",
+        "ramsey/uuid": "^4.7"    
+    },
+    "autoload": {
+        "files": [
+            "configure/env_path.php",
+            "configure/databases.php"
+        ]
+    },
+    "require-dev": {
+        "mucholove/deployer": "dev-main",
+        "phpunit/phpunit": "^11.0"
+    }
+}
