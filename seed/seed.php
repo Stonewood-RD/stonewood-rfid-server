@@ -23,16 +23,70 @@ function getErrorLogPath()
     return $errorLogPath;
 }
 
-
 ini_set("error_log", getErrorLogPath());
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-global $_GLOBALS;
-$_GLOBALS["RUN_CREATE_TABLE"] = true; 
-
 require_once dirname(__FILE__, 2)."/vendor/autoload.php";
+
+//-------------------------------------------------------------------------
+//-------------------------------------------------------------------------
+//-------------------------------------------------------------------------
+//-------------------------------------------------------------------------
+
+global $_GLOBALS;
+
+$dataAccessorConstructions = $_GLOBALS["DataAccessManager_dataAccessorConstructions"];
+
+echo "Creating permissions for #: ".count($dataAccessorConstructions)." data accessor constructions. \n";
+
+foreach ($dataAccessorConstructions as $key => $construction)
+{
+    $dataAccessor = DataAccessManager::get($key);
+    
+    if (method_exists($dataAccessor, "createOrAnnounceTable"))
+    {
+        $dataAccessor->createOrAnnounceTable();
+    }
+}
+
+//-------------------------------------------------------------------------
+//-------------------------------------------------------------------------
+//-------------------------------------------------------------------------
+//-------------------------------------------------------------------------
+
+foreach ($dataAccessorConstructions as $key => $construction)
+{
+    $permissions = [
+        "create",
+        "read",
+        "update",
+        "delete",
+        //-------------------------------------------------------------------------
+        "all",
+    ];
+
+    foreach ($permissions as $permissionKey)
+    {
+        $permissionName = $key.".".$permissionKey;
+
+        $permission = [
+            "name"         => $permissionName,
+            "is_active"    => true,
+            "date_created" => date("Y-m-d H:i:s"),
+        ];
+
+        echo "Creating permission: ".$permissionName."\n";
+        
+        DataAccessManager::get("permissions")->insertIfNotExists($permission);
+    }
+}
+
+//-------------------------------------------------------------------------
+//-------------------------------------------------------------------------
+//-------------------------------------------------------------------------
+//-------------------------------------------------------------------------
 
 global $_GTK_DATA_ACCESS;
 global $_STONEWOOD_LIB;
@@ -63,51 +117,6 @@ foreach ($PERMISSION_ARRAYS_TO_ADD as $permissions)
 //-------------------------------------------------------------------------
 //-------------------------------------------------------------------------
 
-global $_GLOBALS;
-
-$dataAccessorConstructions = $_GLOBALS["DataAccessManager_dataAccessorConstructions"];
-
-echo "Creating permissions for #: ".count($dataAccessorConstructions)." data accessor constructions. \n";
-
-foreach ($dataAccessorConstructions as $key => $construction)
-{
-    $permissions = [
-        "create",
-        "read",
-        "update",
-        "delete",
-        //-------------------------------------------------------------------------
-        "all",
-    ];
-
-    foreach ($permissions as $permissionKey)
-    {
-        $permissionName = $key.".".$permissionKey;
-
-        $permission = [
-            "name"         => $permissionName,
-            "is_active"    => true,
-            "date_created" => date("Y-m-d H:i:s"),
-        ];
-
-        echo "Creating permission: ".$permissionName."\n";
-        
-        DataAccessManager::get("permissions")->insertIfNotExists($permission);
-    }
-
-
-    $dataAccessor = DataAccessManager::get($key);
-    
-    if (method_exists($dataAccessor, "createOrAnnounceTable"))
-    {
-        $dataAccessor->createOrAnnounceTable();
-    }
-}
-
-//-------------------------------------------------------------------------
-//-------------------------------------------------------------------------
-//-------------------------------------------------------------------------
-//-------------------------------------------------------------------------
 
 $roles = [];
 
