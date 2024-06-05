@@ -13,7 +13,7 @@
         "php": "8.2"
     },
     "repoInfo": "https://getcomposer.org/doc/05-repositories.md",
-    "repositories": {
+    "repositoriesNOT": {
         "local-libs": {
             "type": "path",
             "url": "../*"
@@ -31,7 +31,7 @@
             "url": "https://github.com/stonewood-rd/rntt"
         }
     },
-    "repositoriesNOT": {
+    "repositories": {
         "mucholove/deployer": {
             "type": "vcs",
             "url": "https://github.com/mucholove/deployer"
