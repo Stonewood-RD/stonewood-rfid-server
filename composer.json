@@ -31,6 +31,8 @@
             "url": "https://github.com/stonewood-rd/rntt"
         }
     },
+    "TEMPLATE1": "repositories",
+    "TEMPLATE2": "repositoriesNOT",
     "repositories": {
         "mucholove/deployer": {
             "type": "vcs",
@@ -70,9 +72,7 @@
     "requireOther": {
         "endroid/qr-code": "^4.8",
         "ddeboer/imap": "^1.17",
-        "markrogoyski/math-php": "2.*",
         "phpmailer/phpmailer": "6.9.1",
-        "thiagoalessio/tesseract_ocr": "^2.12",
         "phpseclib/phpseclib": "^3.0",
         "ramsey/uuid": "^4.7"    
     },
@@ -82,8 +82,12 @@
             "configure/databases.php"
         ]
     },
+    "tooHeavy": {
+        "phpunit/phpunit": "^11.0",
+        "markrogoyski/math-php": "2.*",
+        "thiagoalessio/tesseract_ocr": "^2.12"
+    },
     "require-dev": {
-        "mucholove/deployer": "dev-main",
-        "phpunit/phpunit": "^11.0"
+        "mucholove/deployer": "dev-main"
     }
 }
