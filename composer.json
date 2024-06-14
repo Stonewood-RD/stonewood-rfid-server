@@ -92,8 +92,8 @@
         "mucholove/deployer": "dev-main"
     },
     "config": {
-        "MAYBE-allow-plugins": {
-            "php-http/discovery": false
+        "allow-plugins": {
+            "php-http/discovery": true
         }
     }
 }
