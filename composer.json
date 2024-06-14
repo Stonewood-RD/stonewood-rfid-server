@@ -66,6 +66,7 @@
         "php": "^8.1",
         "gtk/gtk-data-access":  "dev-main",
         "gtk/gtk-helpers": "dev-main",
+        "guzzlehttp/guzzle": "^7.0.1",
         "stonewood/conexion_rfid":"dev-main",
         "stonewood/stonewood-lib": "dev-main"
     },
@@ -89,5 +90,10 @@
     },
     "require-dev": {
         "mucholove/deployer": "dev-main"
+    },
+    "config": {
+        "MAYBE-allow-plugins": {
+            "php-http/discovery": false
+        }
     }
 }
