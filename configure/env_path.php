@@ -41,8 +41,10 @@ if (!isset($_GTK_SUPER_GLOBALS))
 }
 
 
-
-function gtk_log($toLog)
+if (!function_exists('gtk_log'))
 {
-	error_log($toLog);
+    function gtk_log($toLog)
+    {
+        error_log($toLog);
+    }
 }
