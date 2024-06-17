@@ -39,3 +39,10 @@ if (!isset($_GTK_SUPER_GLOBALS))
 
     // $myObject->render(...$_GTK_SUPER_GLOBALS);
 }
+
+
+
+function gtk_log($toLog)
+{
+	error_log($toLog);
+}
