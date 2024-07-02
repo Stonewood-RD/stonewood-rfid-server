@@ -41,7 +41,7 @@ $dataAccessorConstructions = $_GLOBALS["DataAccessManager_dataAccessorConstructi
 
 echo "Creating permissions for #: ".count($dataAccessorConstructions)." data accessor constructions. \n";
 
-echo print_r($dataAccessorConstructions, true);
+// echo print_r($dataAccessorConstructions, true);
 
 foreach ($dataAccessorConstructions as $key => $construction)
 {
