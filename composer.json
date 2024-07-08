@@ -21,13 +21,14 @@
             "type": "path",
             "url": "../*"
         },
+        
+        "local-gtk-libs": {
+            "type": "path",
+            "url": "../../gtk-core/*"
+        },
         "mucholove/deployer": {
             "type": "vcs",
             "url": "https://github.com/mucholove/deployer"
-        },
-        "gtk/gtk-helpers": {
-            "type": "vcs",
-            "url": "https://github.com/mucholove/gtk-helpers"
         },
         "gtk/rntt": {
             "type": "vcs",
