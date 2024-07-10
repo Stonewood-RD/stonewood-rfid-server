@@ -10,6 +10,8 @@ if (!is_array($_GLOBALS))
 $_GLOBALS["ENV_FILE_PATH"] = dirname(__DIR__)."/.secret/env.php"; 
 $_GLOBALS["GTK_REPO_ROOT"] = dirname(__DIR__)."/.secret/env.php";
 
+date_default_timezone_set('America/Santo_Domingo');
+
 
 global $_GTK_SUPER_GLOBALS;
 
