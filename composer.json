@@ -82,6 +82,7 @@
     "autoload": {
         "files": [
             "configure/env_path.php",
+            "configure/time.php",
             "configure/databases.php"
         ]
     },
