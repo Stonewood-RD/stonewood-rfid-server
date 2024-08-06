@@ -39,7 +39,7 @@ global $_GLOBALS;
 
 $dataAccessorConstructions = $_GLOBALS["DataAccessManager_dataAccessorConstructions"];
 
-echo "Creating permissions for #: ".count($dataAccessorConstructions)." data accessor constructions. \n";
+echo "Creating permissions for #: ".gtk_count($dataAccessorConstructions)." data accessor constructions. \n";
 
 // echo print_r($dataAccessorConstructions, true);
 
@@ -160,7 +160,7 @@ foreach ($usersToAdd as $user)
 
         $roles = $user['roles'] ?? [];
         
-        echo "Will assign roles ".count($roles)." to user: ".$user['cedula']."...\n";
+        echo "Will assign roles ".gtk_count($roles)." to user: ".$user['cedula']."...\n";
 
         foreach ($roles as $role)
         {
