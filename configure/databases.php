@@ -5,7 +5,7 @@ global $_GLOBALS;
 $dataAccessorConstructions = [];
 
 $dataAccessorConstructions = array_merge($dataAccessorConstructions,  
-    $_GLOBALS["STONEWOOD_LIB_DATA_ACCESS_CONSTRUCTIONS"]);
+    $_GLOBALS["STONEWOOD_LIB_DATA_ACCESS_CONSTRUCTIONS"], $_GLOBALS["CONEXION_RFID_CONSTRUCTIONS"]);
 
 $_GLOBALS["DataAccessManager_dataAccessorConstructions"] = $dataAccessorConstructions;
 

@@ -29,20 +29,23 @@
         "mucholove/deployer": {
             "type": "vcs",
             "url": "https://github.com/mucholove/deployer"
-        },
-        "gtk/rntt": {
-            "type": "vcs",
-            "url": "https://github.com/stonewood-rd/rntt"
         }
     },
     "repositories": {
+        "local-libs": {
+            "type": "path",
+            "url": "../*",
+            "options": {
+                "symlink": true
+            }
+        },
         "mucholove/deployer": {
             "type": "vcs",
             "url": "https://github.com/mucholove/deployer"
         },
         "gtk/gtk-data-access": {
             "type": "vcs",
-            "url": "https://github.com/mucholove/gtk-data-access"
+            "url": "https://github.com/gustavo2804/gtk-data-access"
         },
         "gtk/gtk-helpers": {
             "type": "vcs",
@@ -50,15 +53,14 @@
         },
         "stonewood/stonewood-lib": {
             "type": "vcs",
-            "url": "https://github.com/stonewood-rd/stonewood-lib"
-        },
-        "gtk/rntt": {
-            "type": "vcs",
-            "url": "https://github.com/stonewood-rd/rntt"
+            "url": "https://github.com/Grupo-BBL/stonewood-lib"
         },
         "stonewood/conexion_rfid": {
-            "type": "vcs",
-            "url": "https://github.com/stonewood-rd/rfid-vehiculo-en-punto"
+            "type": "path",
+            "url": "../conexion_rfid",
+            "options": {
+                "symlink": true
+            }
         }
     },
     "FAKE-minimum-stability": "stable",
