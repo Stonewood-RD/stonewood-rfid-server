@@ -72,7 +72,8 @@
         "gtk/gtk-helpers": "dev-main",
         "guzzlehttp/guzzle": "^7.0.1",
         "stonewood/conexion_rfid":"dev-main",
-        "stonewood/stonewood-lib": "dev-main"
+        "stonewood/stonewood-lib": "dev-main",
+        "vlucas/phpdotenv": "^5.5.0"
     },
     "requireOther": {
         "endroid/qr-code": "^4.8",
