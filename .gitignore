@@ -1,7 +1,5 @@
 environment.php
-.secret/
 .secretapp.sqlite
-.secret/*
 vendor/*
 *.env
 .idea/*
