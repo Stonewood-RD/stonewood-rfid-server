@@ -20,3 +20,5 @@ auth.json
 Data/AppStonewood-Production.db
 seed.log
 *.log
+
+.secret/env.php
